@@ -5,3 +5,16 @@
   flex-direction: column;
   align-items: center;
 }
+
+.character__list {
+  width: 100%;
+  background: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-content: flex-start;
+  padding: 2em;
+  height: 60vh;
+  list-style: none;
+  gap: 1em;
+  overflow-y: scroll;
+}
