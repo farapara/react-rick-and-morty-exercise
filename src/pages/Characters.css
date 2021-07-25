@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.character__list {
+.characterList {
   width: 100%;
   background: whitesmoke;
   display: grid;

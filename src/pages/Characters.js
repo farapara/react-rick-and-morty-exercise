@@ -1,6 +1,6 @@
 import "./Characters.css";
-import Form from "./Form";
-import CharacterCard from "./CharacterCard";
+import Form from "../components/Form.js";
+import CharacterCard from "../components/CharacterCard.js";
 
 export default function Characters() {
   return (
