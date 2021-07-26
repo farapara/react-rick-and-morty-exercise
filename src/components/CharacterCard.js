@@ -1,11 +1,10 @@
 import "./CharacterCard.css";
-import image from "../images/logo.png";
 
-export default function CharacterCard() {
+export default function CharacterCard({ name, imageSrc }) {
   return (
-    <li className="CharacterCard">
-      <img className="image" src={image} alt="CharacterCard" />
-      <h3>Name</h3>
+    <li className="characterCard">
+      <img className="characterCardImage" src={imageSrc} alt="CharacterCard" />
+      <h3 className="characterCardName">{name}</h3>
     </li>
   );
 }
