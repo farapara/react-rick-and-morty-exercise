@@ -31,11 +31,10 @@ export default function Characters() {
     const url = `https://rickandmortyapi.com/api/character/?page=${page}`;
 
     fetch(url)
-      .then((resp) => resp.json())
+      .then((response) => response.json())
       .then((data) => {
         const newCharacters = [...characters, ...data.results];
         setCharacters(newCharacters);
-        console.log(newCharacters);
         setPage(page + 1);
       });
   }

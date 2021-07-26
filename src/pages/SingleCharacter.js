@@ -4,19 +4,16 @@ import { useParams } from "react-router-dom";
 
 export default function SingleCharacter() {
   const { id } = useParams();
-
   const [character, setCharacter] = useState(null);
 
   useEffect(() => {
-    if (character === null) {
-      const url = `https://rickandmortyapi.com/api/character/${id}`;
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-          setCharacter(data);
-        });
-    }
-  }, [character]);
+    const url = `https://rickandmortyapi.com/api/character/${id}`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setCharacter(data);
+      });
+  }, [id]);
 
   return (
     <section className="singleCharacter">
