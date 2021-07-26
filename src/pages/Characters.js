@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
+  const [page, setPage] = useState(2);
 
   useEffect(() => {
     const url = "https://rickandmortyapi.com/api/character?page=1";
@@ -16,21 +17,39 @@ export default function Characters() {
       });
   }, []);
 
+  function renderCharacters() {
+    return characters.map((character) => {
+      return (
+        <Link key={character.id} to={`/characters/${character.id}`}>
+          <CharacterCard name={character.name} imageSrc={character.image} />
+        </Link>
+      );
+    });
+  }
+
+  function handleButtonClick() {
+    const url = `https://rickandmortyapi.com/api/character/?page=${page}`;
+
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => {
+        const newCharacters = [...characters, ...data.results];
+        setCharacters(newCharacters);
+        console.log(newCharacters);
+        setPage(page + 1);
+      });
+  }
+
   return (
     <section className="characters">
       <Form />
-      <ul className="CharacterList">
-        {characters.map((character) => {
-          return (
-            <Link
-              key={character.id}
-              to={`/characters/singleCharacter${character.id}`}
-            >
-              <CharacterCard name={character.name} imageSrc={character.image} />
-            </Link>
-          );
-        })}
-      </ul>
+      <ul className="CharacterList">{renderCharacters()}</ul>
+      <button
+        onClick={handleButtonClick}
+        className="loadingMoreCharactersButton"
+      >
+        Load More
+      </button>
     </section>
   );
 }

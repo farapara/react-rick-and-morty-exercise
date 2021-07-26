@@ -1,8 +1,4 @@
 .characters {
-  height: 90vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -17,4 +13,8 @@
   list-style: none;
   gap: 1em;
   overflow-y: scroll;
+}
+
+.loadingMoreCharactersButton {
+  margin-bottom: 2rem;
 }
