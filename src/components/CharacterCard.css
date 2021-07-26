@@ -1,0 +1,16 @@
+.characterCard {
+  background-color: lightgreen;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.chracterCardImage {
+  width: 100%;
+  display: block;
+  max-height: 200px;
+  object-fit: contain;
+  object-position: top center;
+  margin-bottom: 4em;
+}

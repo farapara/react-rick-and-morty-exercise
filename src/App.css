@@ -1,8 +1,9 @@
 .App {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  color: #04b1c5;
-  background-color: #111440;
-  font-size: 2em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: darkgreen;
+  background-color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
 }
